@@ -13,10 +13,6 @@ async def review_pull_request(request: ReviewRequest):
     try:
         # Call the function to process the pull request
         response = await pull_request(request.user_message)
-        return {"response": response}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
 
 if __name__ == "__main__":
     import uvicorn
